@@ -1,1 +1,13 @@
-<p>home works!</p>
+<h2>Listado de Series</h2>
+
+<div *ngIf="loading">Cargando series...</div>
+
+<div *ngIf="error">{{ error }}</div>
+
+<ul *ngIf="!loading && !error">
+  <li *ngFor="let serie of series">
+    <strong>{{ serie.title }}</strong> -
+    {{ serie.channel }} -
+    ⭐ {{ serie.rating }}
+  </li>
+</ul>
